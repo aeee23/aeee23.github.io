@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=320, initial-scale=1">
+    <meta charset="utf-8">
+    <style>
+      html{
+        font-family:Arial
+      }
+      *{
+box-sizing:border-box}
+      .cont{
+background:lightgray;
+        margin: 100px auto;
+        width:220px;
+        height:220px;
+        padding:10px;
+        border-radius:50%
+        
+      }
+      .son{
+        background:darkgreen;
+        height:200px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        font-size:20px;
+        color:lightyellow;
+        font-weight: bold;
+        transition: all .3s ease;
+      
+
+        animation: kk linear 13s infinite forwards;
+        border-radius:50%
+      }
+      
+      
+      
+      @keyframes kk {
+        10%{
+          transform:scale(1,1)
+            rotate(0deg)
+} 
+        20%{
+          transform:scale(1.8,1.0)rotate(45deg)
+} 
+        30%{
+          transform:scale(1.8,1.8)rotate(90deg)
+}
+        40%{
+          transform:scale(1.8,1.0)rotate(45deg)
+} 
+        50%{
+          transform:scale(1.0,1.8)rotate(22deg)
+}
+        60%,70%{
+          transform:scale(1.0,1.0)rotate(0deg)
+        }
+        80%{
+          transform:scale(1.8,1.8)rotate(-90deg)
+} 
+        90%{
+          transform:scale(1.0,1.8)rotate(-45eg)
+}
+        100%{
+          transform:scale(1.0,1.0)rotate(360deg)
+}
+        
+
+
+}
+    </style>
+  </head>
+ 
+  <body>
+    <div class="cont">
+      <div class="son">
+        السلام عليكم
+      </div>
+    </div>
+  </body>
+</html>

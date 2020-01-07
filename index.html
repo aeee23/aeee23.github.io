@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+    <meta charset="utf-8">
+    <title>مقولات</title>
+    
+ 
+   <style>
+body{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background-color:#ffd0a8;
+  color:#333;
+  font-family:'arial',sans-sarif;
+  font-weight:400;
+  text-transform: capitalize;
+  direction:rtl
+}
+
+.container{
+  text-align:center;
+  padding:2.3rem;
+  border-radius:5px;
+  background-color:#fff;
+  flex: 0 0 80%;
+
+}
+
+#qbtn{
+border:none;
+  color:white;
+  background:#d89156;
+  font-size:1.3rem;
+  padding:0.25rem .5rem;
+  border-radius:7px;
+  cursor:pointer;
+  transition: font .5s ease;
+  margin-top: 3rem
+  
+}
+#qbtn:hover{
+font-size: 1.4rem;
+  font-weight:bold
+}
+blockquote{
+background:#f9f9f9;
+border-right:10px solid #fcdbbf;
+margin:1.5rem;
+padding:0.5rem;
+}
+#qther{
+color:rgba(60,49,0,.6);
+  
+}
+
+
+</style>
+  </head>
+  <body>
+    
+  <div class="container">
+     <h2>
+       مقولات 
+    </h2>
+
+     <blockquote>
+       
+    
+    <h2 id="quote">
+      المقولة
+    </h2>
+</blockquote>
+    <h3 id="qther">
+       القائل
+    </h3>
+    <button id="qbtn"> اضغط لعرض مقولة
+  
+    </button>
+  </div>  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script>
+
+const quotes =[ {
+
+name: 'وليم باركس',
+quote: "الأب البخيل يرزق ابنًا مبذرًا"
+
+},
+               {
+name: 'بوب مواواد',
+quote: "الجودة تبدأ من الداخل ثم تحفر طريقها إلى الخارج"
+
+},
+               {
+name: 'جيه جي جاليمور',
+quote: "الأهم من الأحداث نفسها هو رد فعلك تجاهها"
+},
+               {
+name: 'مجهول',
+quote: "ليست قيمة الإنسان بما يبلغ إليه , بل بما يتوق للبلوغ إليه"
+},
+               {
+name: 'نابليون',
+quote: "سئل نـــابليـــــون كيف استطعت أن تولد الثقة في نفوس أفراد جيشك .؟ فأجاب : كنت أرد على ثلاث بثلاث ؟؟ من قال لا أقدر ... قلت له ... حاول من قال لاأعرف ... قلت له ... تعلم من قال مستحيل ... قلت له ... جرب"
+},
+               {
+name: 'ألبرت أينشتاين',
+quote: "‏الشيئان اللذان ليس لهما حدود الكون و غباء الإنسان ، مع أني لست متاكدا بخصوص الكون ."
+},
+               {
+name: '',
+quote: "البئر الذي شربت منه، لا ترمِ فيه حجراً"
+}
+]
+
+const qbtn = document.querySelector('#qbtn'),
+      qther = document.querySelector('#qther'),
+      quot = document.querySelector('#quote');
+var number = 0;
+
+qbtn.addEventListener('click', function(){
+if (number >= quotes.length-1){
+number=0;
+    
+} else{
+number+=1;
+}
+  
+
+qther.innerHTML = quotes[number].name;
+  quot.innerHTML = quotes[number].quote;
+
+});
+
+
+</script>
+  </body>
+</html>

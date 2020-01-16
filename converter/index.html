@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>converter</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> 
+    <style>
+      body{
+      /*  direction:rtl;*/
+        text-align:center;
+        margin-top:70px;
+        background:#333;
+        color:#fff}
+      @keyframes ff {
+from {
+  opacity:1;}
+        to{
+          opacity:0
+}
+}
+      @keyframes ll {
+from {
+  opacity:0;}
+        to{
+          opacity:1
+}
+}
+      input{
+text-align:right
+}
+      output{
+        
+        
+}
+      .card{
+        padding-top:10px
+}
+      
+    </style>
+    
+  </head>
+  <body>
+    <div class="container">
+      <div class="row text-center">
+     <!--   <div class="col-md-6 "> -->
+          <h1 class="h1 mb-3 center col-md-12">
+            تحويل الأوزان
+          </h1>
+        </div>
+        <div class="row">
+          
+        </div>
+          <form>
+            <div class="form-group">
+              <input
+                     id="lbsinput"type="number"
+class="form control form-control-lg"
+                     placeholder="...ادخل وزنا بالباوند">
+            </div>
+          </form>
+       
+     
+          <div id="output" class="col">
+            <div class="card bg-primary mb-2 col-md-6 offset-md-3 text-right">
+              <div class="card-block">
+                
+                <output id="goutput" class="h3">
+</output>
+                  <span class="h3">:غرام </span>
+                  
+                
+              </div>
+              
+            </div>
+            <div class="card bg-success mb-2 col-md-6 offset-md-3 text-right">
+              <div class="card-block">
+
+                <output id="kgoutput" class="h3"></output>
+                                  <span class="h3">:كيلو غرام </span>
+                  
+                
+              </div>
+            </div>
+            <div class="card bg-danger mb-2 col-md-6 offset-md-3 text-right">
+              <div class="card-block">
+            
+                <output id="ozoutput" class="h3"></output>
+                      <span class="h3">: أونصة</span>
+                  
+               
+              </div>
+            </div>
+          </div>
+    </div>
+      
+    
+    <script>
+      
+    
+      
+      
+      document.getElementById('output').style.opacity ="0";
+      
+     
+document.getElementById('lbsinput').addEventListener('input' , function(e){
+         
+    
+      
+let lbs = e.target.value;
+  if(lbs > 0 ){
+    document.getElementById('output').style.animation ="ll 1s forwards";
+
+ 
+document.getElementById('goutput').innerHTML = Math.floor(lbs / 0.0022046);
+  document.getElementById('kgoutput').innerHTML = Math.floor(lbs / 2.2046);
+  document.getElementById('ozoutput').innerHTML = Math.floor(lbs *16);
+    }
+});
+
+document.getElementById('lbsinput').addEventListener('blur' , function(){
+         
+ document.getElementById('output').style.animation ="ff 2s forwards";
+  
+});
+  
+  
+        
+        
+      
+        
+        
+</script>
+  </body>
+</html>

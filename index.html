@@ -101,7 +101,7 @@ return response.json();
 console.log(data);
      const {temperature, summary} = data.currently;
 let fer = (temperature - 32) * (5 / 9);
- degree.textContent = fer;
+ degree.textContent = Math.floor(fer);
  desc.textContent = summary;
  timezone.textContent = data.timezone
 })

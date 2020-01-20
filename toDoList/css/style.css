@@ -178,6 +178,17 @@ header{
     font-size: 20px;
 }
 
+li:nth-child(odd) {
+  background:#fff ;
+}
+
+li:nth-child(even) {
+  background: #eee;
+}
+input:focus::placeholder {
+  color: transparent;
+}
+
 @media only screen and (max-width: 400px) {
   
     .add-to-do i{

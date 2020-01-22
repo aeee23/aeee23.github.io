@@ -1,7 +1,8 @@
 *{box-sizing:border-box}
 
 html{
-touch-action: manipulation
+touch-action: manipulation;
+  background:#eee
 }
 body{
   min-height:100vh;
@@ -12,7 +13,7 @@ body{
 .app{
 height:90vh;
 margin: 0 auto;
-background:#eee
+
 }
 .app *{
 padding: 15px;

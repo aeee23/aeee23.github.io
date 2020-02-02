@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>password</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"> 
+  <!-- <link rel='stylesheet'href='style.css'>--> 
+    <style>
+    *{
+  box-sizing: border-box;
+}
+.container {
+  text-align: center;
+  padding: 10px;
+  margin-top: 15vh;
+}
+.container form {
+  margin: 20px auto 10px;
+  width: 100%;
+  overflow: hidden;
+}
+.container form input {
+  background-color: #f7f7f7;
+  border: 1px solid #eee;
+  margin-bottom: 15px;
+  width: 57%;
+  height: 46px;
+  padding: 10px;
+  float: right;
+}
+.container form input:focus {
+  outline: none;
+}
+.container form button {
+  width: 20%;
+  height: 46px;
+  padding: 5px 10px 10px;
+  background-color: #2196f3;
+  color: #fff;
+  border-color: transparent;
+  cursor: pointer;
+  float: right;
+}
+.container form button:first-of-type {
+  margin-left: 5px;
+  margin-right: 5px;
+
+}
+
+.container form button:disabled {
+  opacity: 0.4;
+  cursor: no-drop;
+}
+.container form button:focus {
+  outline: none;
+}
+.container form button.delete-all {
+  width: 20%;
+  background-color: #f44336;
+}
+.container .tasks-list {
+  width: 100%;
+  margin: 0 auto;
+}
+.container .tasks-list .task-box {
+  background-color: rgba(139, 195, 74, 0.25);
+  padding: 5%;
+  text-align: right;
+  margin-bottom: 15px;
+  margin-right: 5px;
+  width:75%;
+  cursor: pointer;
+  float: right;
+  height: 48px;
+  line-height: 12px
+}
+.container .tasks-list .delete {
+  float: left;
+  width: 20%;
+  background-color: #f44336;
+  color: #fff;
+  border-color: transparent;
+  padding:5%;
+  cursor: pointer;
+  height: 48px;
+  line-height: 13px;
+}
+
+    </style>
+</head>
+<body>
+   
+    <div id='my-app' class='container'>
+      <form action="">
+          <input type="text" placeholder='اكتب مهمتك هنا' v-model='taskText'>
+          <button @click.prevent='addTask' :disabled='!taskText' >إضافة مهمة</button>
+          <button
+           class="delete-all"
+           v-if='tasks.length > 1'
+           @click.prevent='deleteAll'
+           >حذف الكل</button
+           >
+      </form>
+        <div class="tasks-list" v-for='(task, index) in tasks'>
+        <div class="task-box" @click='task.done =!task.done' :style ="{ 'text-decoration' : task.done ? 'line-through' : ''}"> {{task.words}}</div>
+            <span class="delete" @click='deleteTask(index)'>حذف</span>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+   <!--  <script src="vue.js"></script>    --> 
+
+    <script>
+    new Vue({
+
+        el:"#my-app",
+
+        data:{   
+           tasks:[],
+           taskText:'',
+        },
+        methods: {
+            addTask: function(){
+                this.tasks.push({words: this.taskText, done: false});
+                this.taskText ='';
+            },
+            deleteTask: function(index) {
+                this.tasks.splice(index,1);
+            },
+            deleteAll: function(){
+                this.tasks = "";
+            }
+
+
+
+        }
+    })
+    
+    
+    </script>
+</body>
+</html>

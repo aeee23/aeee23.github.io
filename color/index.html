@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>تدرج الألوان</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"> 
+<!--  <link rel='stylesheet'href='style.css'> -->
+  <style>
+  * {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+}
+
+.container {
+  text-align: center;
+}
+.container .grad-box {
+  padding: 30px;
+  border-bottom: 1px solid #ccc;
+  color: #fff;
+  font-weight: bold;
+  font-size: 24px;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(rgb(0, 128, 255), rgb(0, 64, 128));
+}
+}
+.container form {
+  margin: 10% auto;
+  width: 90%;
+}
+.container form .form-group {
+  display: inline-block;
+}
+.container form .form-group label {
+  display: block;
+  margin-bottom: 15px;
+}
+.container form .form-group input {
+  padding: 10px 15px;
+  background-color: #efefef;
+  border: 1px solid #ccc;
+}
+.container form .separator {
+  margin: 0 10px;
+}
+.container .result,
+.container .syntax {
+  margin: 20px auto;
+  background-color: rgba(3, 169, 244, 0.35);
+  padding: 20px;
+  width: 70%;
+  text-align: left;
+}
+.container .result span,
+.container .syntax span {
+  font-weight: bold;
+  width: 20%;
+  display: inline-block;
+}
+  </style>
+</head>
+<body>
+   
+    <div id='my-app' class='container'>
+      <div class="grad-box" :style="{ backgroundImage: 'linear-gradient('+ direction +' , '+ colorOne +' , '+ colorTwo +')' }"></div>
+      
+          <span class="separator"></span>
+
+      <form action="">
+        <div class="form-group">
+          <label for=""> الإتجاه</label>
+          <select  v-model='direction'>
+              <option value="to Bottom" selected>إلى تحت</option>
+              <option value="to right">إلى اليمين</option> 
+              <option value="to top">إلى فوق</option> 
+              <option value="to left">إلى اليسار</option> 
+               <option value="to bottom right">  تحت يمين</option>
+                
+               <option value="to bottom left">تحت يسار</option>
+              
+               <option value="to top right">فوق يمين</option>
+               <option value="to top left">فوق يسار</option>
+
+          </select>
+        </div>
+          <span class="separator"></span>
+        <div class="form-group">
+          <label for="">اللون الأول </label>
+          <input type="color" v-model='colorOne'></div>
+          <span class="separator"></span>
+        <div class="form-group">
+          <label for="">اللون الثاني</label>
+          <input type="color" v-model='colorTwo'></div>
+      </form>
+      
+ 
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+ 
+  <script>
+  new Vue({
+
+      el:"#my-app",
+
+      data:{ 
+      direction: "te bottom",
+      colorOne: "#0080ff",
+      colorTwo: "#004080"
+      }
+  })
+  
+  
+  </script>
+</body>
+</html>

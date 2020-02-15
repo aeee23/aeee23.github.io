@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tamplate</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="css/css/all.min.css">
+    <link rel="apple-touch-icon" href="ico.jpg"/>
+    <link rel="shortcut icon" type="image/x-icon" href="ico.jpg" />
+    <link rel="apple-touch-icon-precomposed" href="icon" />
+    <link rel="manifest" href="/manifest.json">
+
+    <style>
+        :root {
+            --main-bg-color: #096;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        body {
+            direction: rtl;
+            min-height: 100vh;
+            color: #fff;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        header,
+        main,
+        footer {
+            padding: 10px;
+        }
+
+        header {
+            height: 15vh;
+            text-align: center;
+            background: var(--main-bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-shadow: -6px 2px 4px rgba(0, 0, 0, 0.5),
+                0px -5px 33px rgba(255, 255, 255, 1);
+            font-size: 2em;
+        }
+
+        main {
+            height: 70vh;
+            color: black;
+            background: #fefde6;
+            overflow: auto;
+
+
+
+        }
+
+        main h1 {
+            text-align: center;
+            position: sticky;
+            top: -11px;
+            background: inherit;
+            padding-bottom: 10px;
+
+
+        }
+
+        main p {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: calc(20px + 1vw);
+            padding-right: calc(20px + 1vw);
+            ;
+            text-align: justify;
+            max-width: 80ch;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: calc(1em + 1vw);
+            line-height: 1.7;
+
+        }
+
+        footer {
+            height: 15vh;
+            text-align: center;
+            background: var(--main-bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            justify-content: space-between;
+
+        }
+
+        footer>div {
+            flex: 1;
+
+        }
+
+        footer div:nth-child(2) {
+            flex: 5
+        }
+
+        footer i {
+            font-size: 2em;
+
+        }
+
+        footer i:hover {
+            font-size: 3em;
+            animation: kk .2s ease-in-out forwards
+        }
+
+        @keyframes kk {
+
+            0%,
+            100% {
+                font-size: 2em;
+            }
+
+            50% {
+                font-size: 2.5em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="book-app">
+        <header>{{address}}</header>
+
+        <main>
+
+            <h1>
+                {{book[conter].title}}
+            </h1>
+            <p>
+                {{book[conter].para}}
+
+            
+
+            </p>
+
+
+        </main>
+        <footer>
+            <div>
+                <i v-if='conter > 0' @click='conter--' class="back fas fa-arrow-right"></i>
+            </div>
+            <div>
+                <i @click='conter = 0' class="home fas fa-home"></i>
+            </div>
+            <div>
+                <i  v-if="lee > conter" @click='conter++' class=" next fas fa-arrow-left"></i>
+            </div>
+
+        </footer>
+
+    </div>
+    <script src="vue.js"></script>
+
+
+    <script>
+        const book = [{
+            title: "أنواع الكلام",
+            para: "أقسامه ثلاثة : اسم ، وفعل ، وحرف جاء لمعنى فالاسم يعرف : بالخفض ، والتنوين ، ودخول الألف واللام ، وحروف الخفض وهي : من وإلى وعن وعلى وفي ورب والباء والكاف واللام وحروف القسم وهي : الواو والباء والتاء والفعل يعرف بقد والسين و ( سوف ) وتاء التأنيث الساكنة والحرف مالا يصلح معه دليل الاسم ولا دليل الفعل"
+        }, {
+            title: "باب الإعراب",
+            para: "الإعراب هو تغيير أواخر الكلم لاختلاف العوامل الداخلة عليها لفظاً أو تقديراً . وأقسامه أربعة : رفع ونصب وخفض وجزم فللأسماء من ذلك الرفع والنصب والخفض ولا جزم فيها وللأفعال من ذلك الرفع والنصب والجزم ولا خفض فيها .",
+
+        }, {
+            title: "باب معرفة علامات الإعراب",
+            para: "للرفع أربع علامات : الضمة والواو والألف والنون . فأما الضمة فتكون علامة للرفع في أربعة مواضع : الاسم المفرد وجمع التكسير وجمع المؤنث السالم والفعل المضارع الذي لم يتصل بآخره شيء . وأما الواو فتكون علامة للرفع في موضعين : في جمع المذكر السالم وفي الأسماء الخمسة وهي : أبوك وأخوك وحموك وفوك وذو مال . وأما الألف فتكون علامة للرفع في تثنية الأسماء خاصة . وأما النون فتكون علامة للرفع في الفعل المضارع إذا اتصل به ضمير التثنية أو ضمير جمع أو ضمير المؤنثة المخاطبة .",
+
+        }, {
+            title: "علامات النصب",
+            para: "وللنصب خمس علامات : الفتحة والألف والكسرة والياء وحذف النون . فأما الفتحة فتكون علامة للنصب في ثلاثة مواضع : في الاسم المفرد وجمع التكسير والفعل المضارع إذا دخل عليه ناصب ولم يتصل بآخره شيء . وأما الألف فتكون علامة للنصب في الأسماء الخمسة نحو : رأيت أباك وأخاك وما أشبه ذلك . وأما الكسرة فتكون علامة للنصب في جمع المؤنث السالم . وأما الياء فتكون علامة للنصب في التثنية والجمع . وأما حذف النون فيكون علامة للنصب في الأفعال الخمسة التي رفعها بثبوت النون .",
+
+        }, {
+            title: "علامات الخفض",
+            para: "وللخفض ثلاث علامات : الكسرة والياء والفتحة . فأما الكسرة فتكون علامة للخفض في ثلاثة مواضع : في الاسم المفرد المنصرف وجمع التكسير المنصرف وجمع المؤنث السالم . وأما الياء فتكون علامة للخفض في ثلاثة مواضع : في الأسماء الخمسة وفي التثنية والجمع . وأما الفتحة فتكون علامة للخفض في الاسم الذي لا ينصرف .",
+
+        }, {
+            title: "علامتاالجزم",
+            para: "وللجزم علامتان : السكون والحذف . فأما السكون فيكون علامة للجزم في الفعل المضارع الصحيح الآخر . وأما الحذف فيكون علامة للجزم في الفعل المضارع المعتل الآخر وفي الأفعال الخمسة التي رفعها بثبات النون .",
+
+        }, {
+            title: "المعربات ",
+            para: "المعربات قسمان : قسم يعرب بالحركات وقسم يعرب بالحروف .",
+
+        }, {
+            title: "المعربات بالحركات",
+            para: "فالذي يعرب بالحركات أربعة أشياء : الاسم المفرد وجمع التكسير وجمع المؤنث السالم والفعل المضارع الذي لم يتصل بآخره شيء . وكلها ترفع بالضمة وتنصب بالفتحة وتخفض بالكسرة وتجزم بالسكون وخرج عن ذلك ثلاثة أشياء : جمع المؤنث السالم ينصب بالكسرة والاسم الذي لا ينصرف يخفض بالفتحة والفعل المضارع المعتل الآخر يجزم بحذف آخره .",
+
+        }, {
+            title: "المعربات بالحروف",
+            para: "والذي يعرب بالحروف أربعة أنواع : التثنية ، وجمع المذكر السالم ، والأسماء الخمسة ، والأفعال الخمسة ،وهي : يفعلان ، وتفعلان ، ويفعلون ، وتفعلون ، وتفعلين . فأما التثنية فترفع بالألف وتنصب وتخفض بالياء . وأما جمع المذكر السالم فيرفع بالواو  وينصب ويخفض بالياء . وأما الأسماء الخمسة فترفع بالواو وتنصب بالألف وتخفض بالياء .  وأما الأفعال الخمسة فترفع بالنون وتجزم بحذفها .",
+
+        }, {
+            title: "باب الأفعال",
+            para: "الأفعال ثلاثة : ماضٍ ومضارع وأمر نحو : ضرب ويضرب واضرب . فالماضي مفتوح الآخر أبداً . والأمر مجزوم أبداً .  والمضارع ما كان في أوله إحدى الزوائد الأربع التي يجمعها قولك ( أنيت ) وهو مرفوع أبداً حتى يدخل عليه ناصب أو جازم . فالنواصب عشرة وهي :أنْ و لن و إذن وكي و لام كي و لام الجحود و حتى و الجواب بالفاء و الواو و أو . والجوازم ثمانية عشر وهي : لم ، ولما ، و ألمْ ، وألمَّا ، ولام الأمر والدعاء ، و ( لا ) في النهي والدعاء ، وإن ، وما ومهما ، وإذ ، وإذما ، وأي ، ومتى ، وأين ، وأيان ، وأنَّى ، وحيثما ، وكيفما ، وإذاً في الشعر خاصة .",
+
+        }
+        ];
+        var app = new Vue({
+            el: '#book-app',
+            data: {
+                book: book,
+                conter: 0,
+                address: "الأجرومية",
+                lee : book.length -1
+            }
+        })
+    </script>
+</body>
+
+</html>

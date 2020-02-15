@@ -1,0 +1,9 @@
+{
+    "name": "الأجرومية",
+    "short_name": "أجرومية",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#009966",
+    "theme_color": "#009966",
+    "orientation": "portrait-primary"
+}

@@ -65,7 +65,7 @@
         position: absolute;
         right: 0;
         top: 15vh;
-        height: 85vh;
+        height: 450px;
         max-height:85vh;
         background: var(--main-bg-color);
         opacity: .9;

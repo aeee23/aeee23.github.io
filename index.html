@@ -2,127 +2,46 @@
 <html lang="ar">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <title>الأجرومية</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
-    <link rel="apple-touch-icon" href="ico.jpg"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" />
+    <link rel="apple-touch-icon" href="ico.jpg" />
     <link rel="apple-touch-startup-image" href="image.png" />
     <link rel="shortcut icon" type="image/x-icon" href="ico.jpg" />
     <link rel="apple-touch-icon-precomposed" href="icon" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="manifest" href="/manifest.json">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="stylesheet" href="style.css">
 
-    <style>
-        :root {
-            --main-bg-color: #096;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        .container {
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        body {
-            direction: rtl;
-            min-height: 100vh;
-            color: #fff;
-            background: var(--main-bg-color);
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        header,
-        main,
-        footer {
-            padding: 10px;
-        }
-
-        header {
-            height: 15vh;
-            text-align: center;
-            background: var(--main-bg-color);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-shadow: -6px 2px 4px rgba(0, 0, 0, 0.5),
-                0px -5px 33px rgba(255, 255, 255, 1);
-            font-size: 2em;
-        }
-
-        main {
-            height: 70vh;
-            color: black;
-            background: #fefde6;
-            overflow: auto;
-
-
-
-        }
-
-        main h1 {
-            text-align: center;
-            position: sticky;
-            top: -11px;
-            background: inherit;
-            padding-bottom: 10px;
-
-
-        }
-
-        main p {
-            padding-top: 10px;
-            padding-bottom: 10px;
-            padding-left: calc(20px + 1vw);
-            padding-right: calc(20px + 1vw);
-            ;
-            text-align: justify;
-            max-width: 80ch;
-            margin-left: auto;
-            margin-right: auto;
-            font-size: calc(1em + 1vw);
-            line-height: 1.7;
-
-        }
-
-        footer {
-            height: 15vh;
-            text-align: center;
-            background: var(--main-bg-color);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            justify-content: space-between;
-
-        }
-
-        footer>div {
-            flex: 1;
-
-        }
-
-        footer div:nth-child(2) {
-            flex: 5
-        }
-
-        footer i {
-            font-size: 2.5em;
-
-        }
-
-      
-    </style>
 </head>
 
 <body>
     <div id="book-app">
-        <header>{{address}}</header>
+        <header>
+            <nav>
+                <div id='burger' class="burger">
+                    <i id="menu-icon" class=" fas fa-bars"></i>
+                </div>
+                <ul id="ul-nav">
+                    <li><a @click='conter = 1' href='#'> {{book[1].title}}</a></li>
+                    <li><a @click='conter = 2' href='#'> {{book[2].title}}</a></li>
+                    <li><a @click='conter = 3' href='#'> {{book[3].title}}</a></li>
+                    <li><a @click='conter = 4' href='#'> {{book[4].title}}</a></li>
+                </ul>
+                <div class="logo">
+                    <h4>{{address}}</h4>
+                </div>
 
-        <main>
+            </nav>
+
+
+
+        </header>
+
+
+        <main id='main'>
 
             <h1>
                 {{book[conter].title}}
@@ -130,7 +49,7 @@
             <p>
                 {{book[conter].para}}
 
-            
+
 
             </p>
 
@@ -144,13 +63,13 @@
                 <i @click='conter = 0' class="home fas fa-home"></i>
             </div>
             <div>
-                <i  v-if="lee > conter" @click='conter++' class=" next fas fa-arrow-left"></i>
+                <i v-if="lee > conter" @click='conter++' class=" next fas fa-arrow-left"></i>
             </div>
 
         </footer>
 
     </div>
-<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
 
     <script>
@@ -201,9 +120,56 @@
                 book: book,
                 conter: 0,
                 address: "الأجرومية",
-                lee : book.length -1
+                lee: book.length - 1
             }
-        })
+        });
+        /* nav */
+        const burger = document.getElementById('burger');
+
+        const navSlide2 = () => {
+            const aNav = document.querySelector('#ul-nav');
+            aNav.addEventListener('click', function () {
+                burger.click();
+            })
+
+
+
+        }
+
+        const navSlide = () => {
+
+
+            burger.addEventListener('click', function () {
+                moveIt();
+
+            });
+
+
+        }
+        function moveIt() {
+            const nav = document.querySelector('nav ul');
+            const links = document.querySelectorAll('nav li');
+            const menuIcon = document.getElementById('menu-icon');
+            const main = document.getElementById('main');
+            main.classList.toggle('marLift')
+            nav.classList.toggle('nav-active');
+            menuIcon.classList.toggle('fa-bars');
+            menuIcon.classList.toggle('fa-times');
+            links.forEach((link, index) => {
+                if (link.style.animation) {
+                    link.style.animation = '';
+                } else {
+
+                    link.style.animation = `navlinks 0.5s ease forwards ${index / 7 + 0.5}s`
+                }
+            })
+
+        }
+
+        navSlide();
+        navSlide2();
+
+
     </script>
 </body>
 

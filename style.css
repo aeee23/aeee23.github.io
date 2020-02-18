@@ -143,9 +143,9 @@
         color: black;
         background: #fefde6;
         overflow: auto;
-        -webkit-transition: transform 0.5s ease;
-        -o-transition: transform 0.5s ease;
-        transition: transform 0.5s ease;
+        -webkit-transition: margin-right 0.5s ease;
+        -o-transition: margin-right 0.5s ease;
+        transition: margin-right 0.5s ease;
 
     }
 
@@ -176,7 +176,7 @@
     }
 
     .marLift {
-        transform: translateX(-50%);
+        margin-right:50%;
     }
 
     footer {

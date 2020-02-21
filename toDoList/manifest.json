@@ -1,5 +1,25 @@
 {
-   "name": "مهامّي",
-   "display": "standalone",
+    "name": "مهامي",
+    "url": "https://aeee23.github.io/toDoList.html",
+    "short_name": "مهامي",
+    "hook_attributes": {
+        "url": "https://aeee23.github.io/toDoList.html"
+    },
+    "redirect_url": "https://aeee23.github.io/toDoList.html",
+    "public": true,
+    "default_permissions": {
+        "issues": "write",
+        "checks": "write"
+    },
+    "default_events": [
+        "issues",
+        "issue_comment",
+        "check_suite",
+        "check_run"
+    ],
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#223399",
+    "theme_color": "#002299",
     "orientation": "portrait-primary"
 }

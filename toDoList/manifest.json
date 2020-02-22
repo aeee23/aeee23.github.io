@@ -1,11 +1,11 @@
 {
     "name": "مهامي",
-    "url": "https://aeee23.github.io/toDoList.html",
+    "url": "https://aeee23.github.io/toDoList/index.html",
     "short_name": "مهامي",
     "hook_attributes": {
-        "url": "https://aeee23.github.io/toDoList.html"
+        "url": "https://aeee23.github.io/toDoList/index.html"
     },
-    "redirect_url": "https://aeee23.github.io/toDoList.html",
+    "redirect_url": "https://aeee23.github.io/toDoList/index.html",
     "public": true,
     "default_permissions": {
         "issues": "write",

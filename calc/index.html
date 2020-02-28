@@ -16,7 +16,7 @@
             overflow: hidden;
 position: fixed;
           width:100vw;
-            height: 100vh;
+            /*height: 100vh;*/
             text-align: center;
             display: -webkit-box;
             display: -ms-flexbox;
@@ -33,6 +33,7 @@ position: fixed;
                 -ms-user-select: none;
                     user-select: none;
             touch-action: manipulation;
+            
         }
 
         .display {
@@ -268,7 +269,7 @@ position: fixed;
                 }
             }
         });
-
+document.body.style.height = window.innerHeight;
     </script>
  </body>
 </html>

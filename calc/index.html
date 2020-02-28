@@ -6,36 +6,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>الحاسبة</title>
     <style>
+     
         * {
-            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
         }
 
         body {
             height: 100vh;
             text-align: center;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            align-items: center;
-            justify-content: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
             font-size: 5vmin;
-            user-select: none;
+            -webkit-user-select: none;
+               -moz-user-select: none;
+                -ms-user-select: none;
+                    user-select: none;
         }
 
         .display {
             height: 20%;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            justify-content: flex-end;
-            align-items: center;
+            -webkit-box-pack: end;
+                -ms-flex-pack: end;
+                    justify-content: flex-end;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
             background: #989898;
             padding: 0.5em;
             color: #fff;
             font-size: 8vmin;
-            user-select: all;
+            -webkit-user-select: all;
+               -moz-user-select: all;
+                -ms-user-select: all;
+                    user-select: all;
         }
 
         .calc {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            flex-direction: column;
-            align-items: stretch;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+            -webkit-box-align: stretch;
+                -ms-flex-align: stretch;
+                    align-items: stretch;
             width: 65vmin;
             height: 90vmin;
             font-family: sans-serif;
@@ -46,28 +73,47 @@
 
         .buttons {
             text-align: center;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            flex-direction: column;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
             height: -webkit-fill-available;
             height: -moz-available;
             height: fill-available;
-            user-select: none;
+            -webkit-user-select: none;
+               -moz-user-select: none;
+                -ms-user-select: none;
+                    user-select: none;
         }
 
         .button-row {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
             height: 100%;
-            justify-content: space-around;
+            -ms-flex-pack: distribute;
+                justify-content: space-around;
         }
 
         .button {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
             border: 0.5px solid grey;
             width: 100%;
             padding: 0.4em;
             background: #d0d0d0;
+            -webkit-transition: background-color 0.2s ease-out;
+            -o-transition: background-color 0.2s ease-out;
             transition: background-color 0.2s ease-out;
             cursor: pointer;
         }

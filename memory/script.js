@@ -10,7 +10,7 @@ document.querySelector("#overBtn").onclick = function() {
   var prom = prompt('ما اسمك');
   
   if (prom == "" || prom == null){
-name.innerHTML ="player";
+name.innerHTML ="مجهول";
 } else {
 name.innerHTML = prom;
 }

@@ -26,7 +26,7 @@ SECONDHAND.style.transform = `rotate(${secPosition}deg)`;
 
 
 document.querySelector("#open").onclick = function() {
-setTimeout(() => { document.querySelector('#sound').play(); }, 600);
+setTimeout(() => { document.querySelector('#sound').play(); }, 100);
   let interval = setInterval(runClock , 1000);
   
 ;
